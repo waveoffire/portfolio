@@ -1,10 +1,11 @@
-# portfolio
+# Portfolio
 
-> portfolio Piotr Smilgin
+> Portfolio Piotr Smilgin
+> Live: https://waveoffire.github.io/portfolio/
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -14,5 +15,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
