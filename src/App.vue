@@ -31,55 +31,55 @@
           <br>Zapraszam do obejrzenia moich projektów. Jeśli masz dla mnie propozycje współpracy - zapraszam do kontaktu.
         </div>
         <div class="myphoto col-5">
-          <img src="./assets/photo/myphoto.jpg">
+          <img src="./../public/img/myphoto.jpg">
         </div>
       </div>
     </div>
     <div id="experiencestart" class="experience container">
       <h1>Moje umiejętności</h1>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/html.png" alt="HTML">
+        <img class="expPhoto" src="./../public/img/html.png" alt="HTML">
 
         <p class="expSpan">HTML to podstawa każdej mojej strony</p>
       </div>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/css.png" alt="CSS">
+        <img class="expPhoto" src="./../public/img/css.png" alt="CSS">
         <p class="expSpan">Animacje w CSS nie są mi obce</p>
       </div>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/JavaScript.png" alt="JAVASCRIPT">
+        <img class="expPhoto" src="./../public/img/JavaScript.png" alt="JAVASCRIPT">
         <span class="expSpan">API i Front pisze w JavaScript</span>
       </div>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/vue.png" alt="VUE.JS">
+        <img class="expPhoto" src="./../public/img/vue.png" alt="VUE.JS">
         <span class="expSpan">Vue.js to framework który skradł mi serce</span>
       </div>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/bootstrap.png" alt="BOOTSTRAP">
+        <img class="expPhoto" src="./../public/img/bootstrap.png" alt="BOOTSTRAP">
         <span class="expSpan">Bootstrap bez niego życie nie było by takie proste</span>
       </div>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/json.png" alt="JSON">
+        <img class="expPhoto" src="./../public/img/json.png" alt="JSON">
         <span class="expSpan">Dane pomiedzy api-front przesyłam jako JSON</span>
       </div>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/Git.png" alt="GIT">
+        <img class="expPhoto" src="./../public/img/Git.png" alt="GIT">
         <span class="expSpan">GIT to System kontroli wersji który ratuje życie</span>
       </div>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/typescript.png" alt="TYPESCRIPT">
+        <img class="expPhoto" src="./../public/img/typescript.png" alt="TYPESCRIPT">
         <span class="expSpan">Do swoich projektów używam również TypeScript</span>
       </div>
       <div class="expDiv">
-        <img class="expPhoto" src="./assets/photo/node.png" alt="NODE">
+        <img class="expPhoto" src="./../public/img/node.png" alt="NODE">
         <span class="expSpan">API bez Node.js by nie istniało</span>
       </div>
       <div>
         <div class="expDiv npm">
-          <img class="expPhoto" src="./assets/photo/npm.svg" alt="NPM">
+          <img class="expPhoto" src="./../public/img/npm.svg" alt="NPM">
         </div>
         <div class="expDiv npm">
-          <img class="expPhoto" src="./assets/photo/yarn.png" alt="YARN">
+          <img class="expPhoto" src="./../public/img/yarn.png" alt="YARN">
         </div>
         <!--  <img class="expPhoto" src="./assets/photo/mysql.png" alt="MYSQL"> -->
       </div>
@@ -89,7 +89,7 @@
       <h1>Moje projekty</h1>
       <div style="padding-top:100px;" class="row">
         <div class="col-6 projectdiv">
-          <img class="projectphoto" src="./assets/photo/homepage.png">
+          <img class="projectphoto" src="./../public/img/homepage.png">
           <div class="projecthover">
             <span>
               Przykładowy projekt strony głownej w vanilla javascript i css
@@ -101,7 +101,7 @@
           </div>
         </div>
         <div class="col-6 projectdiv">
-          <img class="projectphoto" src="./assets/photo/zdzis.png">
+          <img class="projectphoto" src="./../public/img/zdzis.png">
           <div class="projecthover">
             <span>Projekt w trakcie realizacji z użyciem Vue.js, pokazujący ciekawe oferty oraz zmiany w cenach samochodów
               <br>
@@ -168,7 +168,7 @@ body {
       rgba(0, 4, 255, 0.2),
       rgba(4, 235, 93, 0.4)
     ),
-    url(./assets/photo/background.jpg);
+    url(./../public/img/background.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   height: 100vh;
@@ -247,10 +247,10 @@ h1 {
   margin: 10px;
   cursor: pointer;
 }
-a {
+.links a {
   color: rgba(255, 255, 255, 0.8);
 }
-a:hover {
+.links a:hover {
   color: rgba(255, 255, 255, 1);
 }
 .projectdiv {
