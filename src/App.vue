@@ -1,11 +1,11 @@
 <template>
   <div class="over" id="app">
     <div class="row menu">
-      <span class="myname col-8" @click="scrolling('header')">Piotr Smilgin</span>
-      <span class="menuspan col-1" @click="scrolling('about')">O mnie</span>
-      <span class="menuspan col-1" @click="scrolling('experience')">Umiejętności</span>
-      <span class="menuspan col-1" @click="scrolling('projects')">Moje projekty</span>
-      <span class="menuspan col-1" @click="scrolling('contact')">Kontakt</span>
+      <span class="myname col-3 col-md-8" @click="scrolling('header')">Piotr Smilgin</span>
+      <span class="menuspan col-2 col-md-1" @click="scrolling('about')">O mnie</span>
+      <span class="menuspan col-2 col-md-1" @click="scrolling('experience')">Umiejętności</span>
+      <span class="menuspan col-3 col-md-1" @click="scrolling('projects')">Moje projekty</span>
+      <span class="menuspan col-2 col-md-1" @click="scrolling('contact')">Kontakt</span>
     </div>
     <div id="headerstart" class="header">
       <div class="header-box">
@@ -25,12 +25,12 @@
       <h1>O mnie</h1>
       <div style="padding-top:100px;" class="row">
         <div
-          class="col-7 about"
+          class="col-12 col-md-7 about"
         >Cześć, nazywam się Piotr Smilgin, a to moje portfolio. Mieszkam w Poznaniu. Pracuje jako serwisant komputerowy oraz dodatkowo, hobistycznie programuje.
           <br>Uwielbiam programować, zwłaszcza front-end. Od dłuższego czasu programuje w Vue.js. Chciałbym w przyszłości zostać programistą Front-end.
           <br>Zapraszam do obejrzenia moich projektów. Jeśli masz dla mnie propozycje współpracy - zapraszam do kontaktu.
         </div>
-        <div class="myphoto col-5">
+        <div class="myphoto col-12 col-md-5">
           <img src="./../public/img/myphoto.jpg">
         </div>
       </div>
@@ -152,7 +152,8 @@ export default {
     scrolling(nazwa) {
       document.querySelector("#" + nazwa + "start").scrollIntoView({
         behavior: "smooth",
-        alignTo: "False"
+        alignToTop: "True",
+        block: "start"
       });
     }
   }
@@ -250,8 +251,8 @@ h1 {
   text-align: center;
 }
 .experience h1 {
-  padding-bottom: 100px;
-  padding-top: 20px;
+  padding-bottom: 50px;
+  padding-top: 100px;
 }
 
 .npm {
@@ -269,5 +270,25 @@ h1 {
 }
 .links a:hover {
   color: rgba(255, 255, 255, 1);
+}
+@media only screen and (max-width: 1000px) {
+  .myphoto {
+    width: 100%;
+  }
+  .myphoto img {
+    transform: translateX(0%);
+  }
+  .about {
+    width: 100%;
+    font-size: 1.4em;
+    padding-top: 0px;
+  }
+  h1 {
+    padding-top: 100px;
+  }
+  .header {
+    background-size: 150%;
+    font-size: 2em;
+  }
 }
 </style>

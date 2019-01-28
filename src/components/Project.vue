@@ -1,5 +1,5 @@
 <template>
-  <div class="col-6 projectdiv">
+  <div class="col-12 col-md-6 projectdiv">
     <img class="projectphoto" :src="photo">
     <div class="projecthover">
       <span>
@@ -30,7 +30,7 @@ export default {
 .projectdiv {
   width: 50%;
   position: relative;
-  padding: 0 10px 0 10px;
+  padding: 10px;
 }
 .projectphoto {
   width: 100%;
@@ -38,7 +38,7 @@ export default {
 }
 .projecthover {
   opacity: 0;
-  margin: 0 15px 0 15px;
+  margin: 10px 15px 10px 15px;
   position: absolute;
   top: 0;
   left: 0;
