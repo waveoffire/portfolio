@@ -1,7 +1,9 @@
 <template>
   <div class="over" id="app">
     <div class="row menu">
-      <span class="myname col-4" @click="scrolling('header')">Piotr Smilgin</span>
+      <span class="col-4">
+        <span class="myname" @click="scrolling('header')">Piotr Smilgin</span>
+      </span>
       <div class="col-7 chamburger">
         <i @click="hidenned()" class="fa fa-bars" aria-hidden="true" style="cursor:pointer"></i>
       </div>
@@ -13,9 +15,9 @@
     </div>
     <div id="headerstart" class="header">
       <div class="header-box">
-        <div>Junior Front-end Developer</div>
-        <div class="headername">Piotr Smilgin</div>
-        <div class="links">
+        <div data-aos="fade-left">Junior Front-end Developer</div>
+        <div data-aos="fade-right" class="headername">Piotr Smilgin</div>
+        <div class="links" data-aos="zoom-in">
           <a href="https://github.com/waveoffire" target="_blank">
             <i class="fa fa-github" aria-hidden="true"></i>
           </a>
@@ -30,25 +32,28 @@
       <h1>O mnie</h1>
       <div style="padding-top:100px;" class="row">
         <div
+          data-aos="flip-right"
           class="col-12 col-md-7 about"
         >Cześć, nazywam się Piotr Smilgin, a to moje portfolio. Mieszkam w Poznaniu. Pracuje jako serwisant komputerowy oraz dodatkowo, hobistycznie programuje.
           <br>Uwielbiam programować, zwłaszcza front-end. Od dłuższego czasu programuje w Vue.js. Chciałbym w przyszłości zostać programistą Front-end.
           <br>Zapraszam do obejrzenia moich projektów. Jeśli masz dla mnie propozycje współpracy - zapraszam do kontaktu.
         </div>
         <div class="myphoto col-12 col-md-5">
-          <img src="./../public/img/myphoto.jpg">
+          <img data-aos="zoom-in-left" src="./../public/img/myphoto.jpg">
         </div>
       </div>
     </div>
     <div id="experiencestart" class="experience container">
       <h1>Moje umiejętności</h1>
       <experience-app
+        data-aos="fade-left"
+        :data-aos-delay="object.id*100"
         v-for="object in experiences"
         :key="object.id"
         :src="object.src"
         :title="object.title"
       ></experience-app>
-      <div>
+      <div data-aos="fade-up" data-aos-delay="200">
         <div class="expDiv npm">
           <img class="expPhoto" src="./../public/img/npm.svg" alt="NPM">
         </div>
@@ -56,13 +61,14 @@
           <img class="expPhoto" src="./../public/img/yarn.png" alt="YARN">
         </div>
         <!--  <img class="expPhoto" src="./assets/photo/mysql.png" alt="MYSQL"> -->
+        <span class="expSpan">NPM i Yarn używam naprzemiennie</span>
       </div>
-      <span class="expSpan">NPM i Yarn używam naprzemiennie</span>
     </div>
     <div id="projectsstart" class="container">
-      <h1>Moje projekty</h1>
+      <h1 style="padding-top:200px">Moje projekty</h1>
       <div style="padding-top:100px;" class="row">
         <project-app
+          data-aos="zoom-in"
           v-for="object in projects"
           :key="object.id"
           :photo="object.photo"
@@ -72,7 +78,17 @@
         ></project-app>
       </div>
     </div>
-    <div id="contactstart" class="contact">cos tu trzeba napisac</div>
+    <div id="contactstart" class="contact">
+      <h2>Kontakt</h2>
+      <i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
+      Email:
+      <a
+        style="color:white"
+        href="mailto:piotrsmilgin7@gmail.com"
+      >piotrsmilgin7@gmail.com</a>
+      <br>
+      <i class="fa fa-fw fa-mobile" aria-hidden="true"></i> Telefon: 692 943 497
+    </div>
   </div>
 </template>
 
@@ -200,6 +216,7 @@ body {
 .myname {
   font-size: 1.5em;
   padding-left: 10px;
+  cursor: pointer;
 }
 .menuspan {
   text-align: center;
@@ -270,7 +287,7 @@ h1 {
   height: 50vh;
   color: white;
   text-align: center;
-  font-size: 2.8em;
+  font-size: 2em;
 }
 .experience {
   text-align: center;

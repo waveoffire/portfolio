@@ -3,8 +3,17 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 Vue.use(BootstrapVue);
 new Vue({
+  created() {
+    AOS.init({
+      throttleDelay: 200,
+      offset: 300,
+      once: true,
+    });
+  },
   el: '#app',
   render: h => h(App)
 })
