@@ -81,7 +81,7 @@
     <div id="contactstart" class="contact">
       <h2 style="text-align:center;">Kontakt</h2>    <div class="row">
         <div class="col-2"></div>
-        <div class="col-4">
+        <div class=" col-4 col-sm-12">
 
       <i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
   
@@ -96,24 +96,24 @@
         <div class="col-1">
 
         </div>
-        <div class="col-4">
+        <div class="col-4 col-sm-12">
 
       <i class="fa fa-fw fa-mobile" aria-hidden="true"></i> Telefon: 692 943 497
         </div>
       </div>
       <div class="row">
         <div class="col-2"></div>
-<div class="col-4">
+<div class="col-4 col-sm-12">
 
-      <i class="fa fa-fw fa-linkedin" aria-hidden="true"></i> <a  style="color:white" href=https://www.linkedin.com/in/piotr-smilgin-a76b94170/>LinkedIn</a>
+      <i class="fa fa-fw fa-linkedin" aria-hidden="true"></i>&nbsp;<a  style="color:white" href=https://www.linkedin.com/in/piotr-smilgin-a76b94170/>LinkedIn</a>
 </div>        <div class="col-1">
           
-        </div><div class="col-4">
+        </div><div class="col-4 col-sm-12">
 
       <i
         class="fa fa-fw fa-github"
         aria-hidden="true"
-      ></i> <a style="color:white" href=https://github.com/waveoffire>GitHub</a>
+      ></i>&nbsp;<a style="color:white" href=https://github.com/waveoffire>GitHub</a>
 </div>
     </div>
       </div>
