@@ -17,6 +17,7 @@ export default {
 <style scooped>
 .expPhoto {
   height: 150px;
+  max-width: 100%;
 }
 .expDiv {
   display: inline-block;

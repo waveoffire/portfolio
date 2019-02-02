@@ -1,11 +1,15 @@
 <template>
   <div class="over" id="app">
     <div class="row menu">
-      <span class="myname col-3 col-md-8" @click="scrolling('header')">Piotr Smilgin</span>
-      <span class="menuspan col-2 col-md-1" @click="scrolling('about')">O mnie</span>
-      <span class="menuspan col-2 col-md-1" @click="scrolling('experience')">Umiejętności</span>
-      <span class="menuspan col-3 col-md-1" @click="scrolling('projects')">Moje projekty</span>
-      <span class="menuspan col-2 col-md-1" @click="scrolling('contact')">Kontakt</span>
+      <span class="myname col-4" @click="scrolling('header')">Piotr Smilgin</span>
+      <div class="col-7 chamburger">
+        <i @click="hidenned()" class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+
+      <span :class="ham" @click="scrolling('about')">O mnie</span>
+      <span :class="ham" @click="scrolling('experience')">Umiejętności</span>
+      <span :class="ham" @click="scrolling('projects')">Moje projekty</span>
+      <span :class="ham" @click="scrolling('contact')">Kontakt</span>
     </div>
     <div id="headerstart" class="header">
       <div class="header-box">
@@ -145,7 +149,8 @@ export default {
           photo: "./img/zdzis.png",
           live: "http://pb.zdzis.com/home"
         }
-      ]
+      ],
+      ham: "menuspan hiddenbox col-sm-2"
     };
   },
   methods: {
@@ -155,6 +160,13 @@ export default {
         alignToTop: "True",
         block: "start"
       });
+    },
+    hidenned() {
+      if (this.ham != "menuspan col-sm-2 hidden") {
+        this.ham = "menuspan col-sm-2 hidden";
+      } else {
+        this.ham = "menuspan hiddenbox col-sm-2";
+      }
     }
   }
 };
@@ -229,6 +241,9 @@ h1 {
   display: inline-block;
   width: 40%;
 }
+.hidden {
+  display: block;
+}
 .myphoto img {
   width: 100%;
   border-radius: 50%;
@@ -254,12 +269,16 @@ h1 {
   padding-bottom: 50px;
   padding-top: 100px;
 }
+.chamburger {
+  display: none;
+}
 
 .npm {
   width: 400px;
   display: inline-block;
   text-align: center;
   margin: 5px;
+  max-width: 100%;
 }
 .links i {
   margin: 10px;
@@ -270,6 +289,12 @@ h1 {
 }
 .links a:hover {
   color: rgba(255, 255, 255, 1);
+}
+.hiddenbox {
+  display: block;
+}
+.chamburger {
+  text-align: right;
 }
 @media only screen and (max-width: 1000px) {
   .myphoto {
@@ -289,6 +314,18 @@ h1 {
   .header {
     background-size: 150%;
     font-size: 2em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header {
+    background-size: 250%;
+    font-size: 1.5em;
+  }
+  .chamburger {
+    display: block;
+  }
+  .hiddenbox {
+    display: none;
   }
 }
 </style>

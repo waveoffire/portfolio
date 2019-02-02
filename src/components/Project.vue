@@ -38,7 +38,7 @@ export default {
 }
 .projecthover {
   opacity: 0;
-  margin: 10px 15px 10px 15px;
+  margin: 10px 10px 10px 10px;
   position: absolute;
   top: 0;
   left: 0;
