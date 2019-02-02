@@ -25,6 +25,7 @@
         </div>
       </div>
     </div>
+
     <div id="aboutstart" class="container">
       <h1>O mnie</h1>
       <div style="padding-top:100px;" class="row">
@@ -71,7 +72,7 @@
         ></project-app>
       </div>
     </div>
-    <div id="contactstart" class="contact"></div>
+    <div id="contactstart" class="contact">cos tu trzeba napisac</div>
   </div>
 </template>
 
@@ -204,6 +205,7 @@ body {
   text-align: center;
   padding-top: 5px;
   cursor: pointer;
+  font-size: 1.3em;
 }
 .header {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100vh);
@@ -264,7 +266,7 @@ h1 {
   background-image: linear-gradient(to bottom, #002d47, #001927);
   background-repeat: no-repeat;
   background-size: 100%;
-
+  padding-top: 13vh;
   height: 50vh;
   color: white;
   text-align: center;
@@ -326,6 +328,10 @@ h1 {
   }
   .about {
     font-size: 1.3rem;
+  }
+
+  .menuspan {
+    font-size: 1em;
   }
 }
 @media only screen and (max-width: 600px) {
