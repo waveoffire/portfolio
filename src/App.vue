@@ -79,16 +79,44 @@
       </div>
     </div>
     <div id="contactstart" class="contact">
-      <h2>Kontakt</h2>
+      <h2 style="text-align:center;">Kontakt</h2>    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4">
+
       <i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
+  
+
       Email:
       <a
         style="color:white"
         href="mailto:piotrsmilgin7@gmail.com"
       >piotrsmilgin7@gmail.com</a>
-      <br>
+      
+        </div>
+        <div class="col-1">
+
+        </div>
+        <div class="col-4">
+
       <i class="fa fa-fw fa-mobile" aria-hidden="true"></i> Telefon: 692 943 497
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2"></div>
+<div class="col-4">
+
+      <i class="fa fa-fw fa-linkedin" aria-hidden="true"></i> <a  style="color:white" href=https://www.linkedin.com/in/piotr-smilgin-a76b94170/>LinkedIn</a>
+</div>        <div class="col-1">
+          
+        </div><div class="col-4">
+
+      <i
+        class="fa fa-fw fa-github"
+        aria-hidden="true"
+      ></i> <a style="color:white" href=https://github.com/waveoffire>GitHub</a>
+</div>
     </div>
+      </div>
   </div>
 </template>
 
@@ -286,7 +314,6 @@ h1 {
   padding-top: 13vh;
   height: 50vh;
   color: white;
-  text-align: center;
   font-size: 2em;
 }
 .experience {
