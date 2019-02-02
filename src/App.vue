@@ -3,7 +3,7 @@
     <div class="row menu">
       <span class="myname col-4" @click="scrolling('header')">Piotr Smilgin</span>
       <div class="col-7 chamburger">
-        <i @click="hidenned()" class="fa fa-bars" aria-hidden="true"></i>
+        <i @click="hidenned()" class="fa fa-bars" aria-hidden="true" style="cursor:pointer"></i>
       </div>
 
       <span :class="ham" @click="scrolling('about')">O mnie</span>
@@ -148,6 +148,13 @@ export default {
             "Projekt w trakcie realizacji z użyciem Vue.js, pokazujący ciekawe oferty oraz zmiany w cenach samochodów",
           photo: "./img/zdzis.png",
           live: "http://pb.zdzis.com/home"
+        },
+        {
+          id: 2,
+          title: "Strona na którą właśnie patrzysz - napisana w Vue.js",
+          photo: "./img/portfolio.png",
+          github: "https://github.com/waveoffire/portfolio",
+          live: "https://waveoffire.github.io/portfolio/"
         }
       ],
       ham: "menuspan hiddenbox col-sm-2"
@@ -196,6 +203,7 @@ body {
 .menuspan {
   text-align: center;
   padding-top: 5px;
+  cursor: pointer;
 }
 .header {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100vh);
@@ -295,6 +303,7 @@ h1 {
 }
 .chamburger {
   text-align: right;
+  padding: 5px;
 }
 @media only screen and (max-width: 1000px) {
   .myphoto {
@@ -315,6 +324,9 @@ h1 {
     background-size: 150%;
     font-size: 2em;
   }
+  .about {
+    font-size: 1.3rem;
+  }
 }
 @media only screen and (max-width: 600px) {
   .header {
@@ -326,6 +338,9 @@ h1 {
   }
   .hiddenbox {
     display: none;
+  }
+  .myname {
+    font-size: 1.3rem;
   }
 }
 </style>

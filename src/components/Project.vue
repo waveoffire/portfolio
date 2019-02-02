@@ -7,9 +7,9 @@
         <br>
         <br>
 
-        <a v-if="github" :href="github" class="btn btn-outline-light">GITHUB</a>
+        <a v-if="github" :href="github" class="btn btn-outline-light" target="_blank">GITHUB</a>
         
-        <a v-if="live" :href="live" class="btn btn-outline-light">LIVE</a>
+        <a v-if="live" :href="live" class="btn btn-outline-light" target="_blank">LIVE</a>
       </span>
     </div>
   </div>
@@ -35,6 +35,7 @@ export default {
 .projectphoto {
   width: 100%;
   border-radius: 10px;
+  border: 1px solid lightblue;
 }
 .projecthover {
   opacity: 0;
@@ -64,5 +65,10 @@ export default {
 }
 .projecthover a {
   margin: 5px;
+}
+@media only screen and (max-width: 1000px) {
+  .projecthover span {
+    top: 20%;
+  }
 }
 </style>
