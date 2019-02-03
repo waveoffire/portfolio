@@ -1,6 +1,10 @@
 <template>
   <div class="expDiv">
-    <img class="expPhoto" :src="src" alt="CSS">
+    <img
+      class="expPhoto"
+      :src="src"
+      alt="CSS"
+    >
     <p class="expSpan">{{title}}</p>
   </div>
 </template>
@@ -16,14 +20,22 @@ export default {
 
 <style scooped>
 .expPhoto {
-  height: 150px;
+  height: 170px;
   max-width: 100%;
+  width: auto;
+  transition: all 0.15s ease-in;
+}
+.expPhoto:hover {
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 .expDiv {
   display: inline-block;
   width: 200px;
   text-align: center;
   margin: 5px;
+  max-width: 200px;
 }
 .expSpan {
   display: block;

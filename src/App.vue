@@ -1,50 +1,119 @@
 <template>
-  <div class="over" id="app">
+  <div
+    class="over"
+    id="app"
+  >
     <div class="row menu">
       <span class="col-4">
-        <span class="myname" @click="scrolling('header')">Piotr Smilgin</span>
+        <span
+          class="myname"
+          @click="scrolling('header')"
+        >Piotr Smilgin</span>
       </span>
       <div class="col-7 chamburger">
-        <i @click="hidenned()" class="fa fa-bars" aria-hidden="true" style="cursor:pointer"></i>
+        <i
+          @click="hidenned()"
+          class="fa fa-bars"
+          aria-hidden="true"
+          style="cursor:pointer"
+        ></i>
       </div>
 
-      <span :class="ham" @click="scrolling('about')">O mnie</span>
-      <span :class="ham" @click="scrolling('experience')">Umiejętności</span>
-      <span :class="ham" @click="scrolling('projects')">Moje projekty</span>
-      <span :class="ham" @click="scrolling('contact')">Kontakt</span>
+      <span
+        :class="ham"
+        @click="scrolling('about')"
+      >O mnie</span>
+      <span
+        :class="ham"
+        @click="scrolling('experience')"
+      >Umiejętności</span>
+      <span
+        :class="ham"
+        @click="scrolling('projects')"
+      >Moje projekty</span>
+      <span
+        :class="ham"
+        @click="scrolling('contact')"
+      >Kontakt</span>
     </div>
-    <div id="headerstart" class="header">
+    <div
+      id="headerstart"
+      class="header"
+    >
       <div class="header-box">
         <div data-aos="fade-left">Junior Front-end Developer</div>
-        <div data-aos="fade-right" class="headername">Piotr Smilgin</div>
-        <div class="links" data-aos="zoom-in">
-          <a href="https://github.com/waveoffire" target="_blank">
-            <i class="fa fa-github" aria-hidden="true"></i>
+        <div
+          data-aos="fade-right"
+          class="headername"
+        >Piotr Smilgin</div>
+        <div
+          class="links"
+          data-aos="zoom-in"
+        >
+          <a
+            href="https://github.com/waveoffire"
+            target="_blank"
+          >
+            <i
+              class="fa fa-github"
+              aria-hidden="true"
+            ></i>
           </a>
-          <a href="https://www.facebook.com/piotr.smilgin.7" target="_blank">
-            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+          <a
+            href="https://www.facebook.com/piotr.smilgin.7"
+            target="_blank"
+          >
+            <i
+              class="fa fa-facebook-official"
+              aria-hidden="true"
+            ></i>
           </a>
         </div>
       </div>
     </div>
 
-    <div id="aboutstart" class="container">
+    <div
+      id="aboutstart"
+      class="container-flex about"
+    >
       <h1>O mnie</h1>
-      <div style="padding-top:100px;" class="row">
+      <span class="line"></span>
+      <div
+        style="padding-top:30px;"
+        class="row"
+      >
         <div
           data-aos="flip-right"
-          class="col-12 col-md-7 about"
+          class="col-12 col-md-8 "
         >Cześć, nazywam się Piotr Smilgin, a to moje portfolio. Mieszkam w Poznaniu. Pracuje jako serwisant komputerowy oraz dodatkowo, hobistycznie programuje.
           <br>Uwielbiam programować, zwłaszcza front-end. Od dłuższego czasu programuje w Vue.js. Chciałbym w przyszłości zostać programistą Front-end.
           <br>Zapraszam do obejrzenia moich projektów. Jeśli masz dla mnie propozycje współpracy - zapraszam do kontaktu.
         </div>
-        <div class="myphoto col-12 col-md-5">
-          <img data-aos="zoom-in-left" src="./../public/img/myphoto.jpg">
+        <div class="myphoto col-12 col-md-3">
+          <img
+            data-aos="zoom-in-left"
+            src="./../public/img/myphoto.jpg"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 myphoto laptop">
+          <img
+            data-aos="zoom-in-left"
+            src="./../public/img/laptop.jpg"
+          >
+        </div>
+        <div class="col-8">
+          XDD
         </div>
       </div>
     </div>
-    <div id="experiencestart" class="experience container">
+    <div
+      id="experiencestart"
+      class="experience container-flex"
+    >
       <h1>Moje umiejętności</h1>
+      <span class="line"></span>
       <experience-app
         data-aos="fade-left"
         :data-aos-delay="object.id*100"
@@ -53,20 +122,18 @@
         :src="object.src"
         :title="object.title"
       ></experience-app>
-      <div data-aos="fade-up" data-aos-delay="200">
-        <div class="expDiv npm">
-          <img class="expPhoto" src="./../public/img/npm.svg" alt="NPM">
-        </div>
-        <div class="expDiv npm">
-          <img class="expPhoto" src="./../public/img/yarn.png" alt="YARN">
-        </div>
-        <!--  <img class="expPhoto" src="./assets/photo/mysql.png" alt="MYSQL"> -->
-        <span class="expSpan">NPM i Yarn używam naprzemiennie</span>
-      </div>
+
     </div>
-    <div id="projectsstart" class="container">
+    <div
+      id="projectsstart"
+      class="container-flex"
+    >
       <h1 style="padding-top:200px">Moje projekty</h1>
-      <div style="padding-top:100px;" class="row">
+      <span class="line"></span>
+      <div
+        style="padding-top:100px;"
+        class="row"
+      >
         <project-app
           data-aos="zoom-in"
           v-for="object in projects"
@@ -78,47 +145,70 @@
         ></project-app>
       </div>
     </div>
-    <div id="contactstart" class="contact">
-      <h2 style="text-align:center;">Kontakt</h2>    <div class="row">
+    <div
+      id="contactstart"
+      class="contact"
+    >
+      <h2 style="text-align:center;">Kontakt</h2>
+      <div
+        style="padding-top:5vh"
+        class="row"
+      >
         <div class="col-2"></div>
         <div class=" col-11 col-sm-4">
 
-      <i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
-  
+          <i
+            class="fa fa-fw fa-envelope"
+            aria-hidden="true"
+          ></i> Email:
+          <a
+            style="color:white"
+            href="mailto:piotrsmilgin7@gmail.com"
+          >piotrsmilgin7@gmail.com</a>
 
-      Email:
-      <a
-        style="color:white"
-        href="mailto:piotrsmilgin7@gmail.com"
-      >piotrsmilgin7@gmail.com</a>
-      
         </div>
         <div class="col-1">
 
         </div>
         <div class="col-11 col-sm-4">
 
-      <i class="fa fa-fw fa-mobile" aria-hidden="true"></i> Telefon: 692 943 497
+          <i
+            class="fa fa-fw fa-mobile"
+            aria-hidden="true"
+          ></i> Telefon: 692 943 497
         </div>
       </div>
       <div class="row">
         <div class="col-2"></div>
-<div class="col-11 col-sm-4">
+        <div class="col-11 col-sm-4">
 
-      <i class="fa fa-fw fa-linkedin" aria-hidden="true"></i>&nbsp;<a  style="color:white" href=https://www.linkedin.com/in/piotr-smilgin-a76b94170/>LinkedIn</a>
-</div>        <div class="col-1">
-          
-        </div><div class="col-11 col-sm-4">
+          <i
+            class="fa fa-fw fa-linkedin"
+            aria-hidden="true"
+          ></i>&nbsp;<a
+            style="color:white"
+            href=https://www.linkedin.com/in/piotr-smilgin-a76b94170/>LinkedIn
+            </a>
+            </div>
+            <div
+            class="col-1"
+          >
 
-      <i
-        class="fa fa-fw fa-github"
-        aria-hidden="true"
-      ></i>&nbsp;<a style="color:white" href=https://github.com/waveoffire>GitHub</a>
-</div>
-    </div>
-      </div>
-  </div>
-</template>
+        </div>
+        <div class="col-11 col-sm-4">
+
+          <i
+            class="fa fa-fw fa-github"
+            aria-hidden="true"
+          ></i>&nbsp;<a
+            style="color:white"
+            href=https://github.com/waveoffire>GitHub
+            </a>
+            </div>
+            </div>
+            </div>
+            </div>
+            </template>
 
 <script>
 import ExperienceApp from "./components/Experience";
@@ -176,6 +266,16 @@ export default {
           id: 8,
           title: "API bez Node.js by nie istniało",
           src: "./img/node.png"
+        },
+        {
+          id: 9,
+          title: "npm używam naprzemiennie z Yarn",
+          src: "./img/npm.svg"
+        },
+        {
+          id: 10,
+          title: "W tym projekcie uzywam Yarn",
+          src: "./img/yarn.png"
         }
       ],
       projects: [
@@ -209,8 +309,9 @@ export default {
     scrolling(nazwa) {
       document.querySelector("#" + nazwa + "start").scrollIntoView({
         behavior: "smooth",
-        alignToTop: "True",
-        block: "start"
+
+        block: "center",
+        inline: "start"
       });
     },
     hidenned() {
@@ -225,6 +326,21 @@ export default {
 </script>
 
 <style>
+.line {
+  width: 100px;
+  height: 1px;
+  border: 2px solid rgb(0, 204, 255);
+  display: block;
+  margin: auto;
+  transform: translateY(-30px);
+}
+.experience .line {
+  width: 200px;
+  transform: translateY(-50px);
+}
+#projectsstart .line {
+  width: 150px;
+}
 .menu {
   background-color: rgba(255, 255, 255, 0.6);
   padding: 15px;
@@ -237,21 +353,25 @@ export default {
   color: rgb(231, 0, 0);
   border-bottom: 1px solid rgba(128, 128, 128, 0.473);
 }
+
 body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
 }
+
 .myname {
   font-size: 1.5em;
   padding-left: 10px;
   cursor: pointer;
 }
+
 .menuspan {
   text-align: center;
   padding-top: 5px;
   cursor: pointer;
   font-size: 1.3em;
 }
+
 .header {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100vh);
   clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100vh);
@@ -269,6 +389,7 @@ body {
   text-align: center;
   font-size: 2.8em;
 }
+
 .header-box {
   top: 40%;
   left: 50%;
@@ -276,33 +397,41 @@ body {
   position: relative;
   color: rgba(255, 255, 255, 0.8);
 }
+
 .headername {
   font-size: 2.2em;
   line-height: 0.7em;
 }
+
 h1 {
   padding: 30px;
   text-align: center;
   padding-top: 150px;
 }
+
 .about {
   display: inline-block;
-  width: 60%;
+  width: 100%;
   font-size: 1.4em;
-  padding-top: 90px;
-  height: 80vh;
 }
+
 .myphoto {
   display: inline-block;
   width: 40%;
 }
+
 .hidden {
   display: block;
 }
+
 .myphoto img {
   width: 100%;
   border-radius: 50%;
   transform: translateX(10%);
+}
+.laptop img {
+  width: 400px;
+  height: 400px;
 }
 .contact {
   -webkit-clip-path: polygon(0 13vh, 100% 0, 100% 50vh, 0 50vh);
@@ -316,40 +445,57 @@ h1 {
   color: white;
   font-size: 2em;
 }
-.experience {
-  text-align: center;
-}
+
 .experience h1 {
   padding-bottom: 50px;
-  padding-top: 100px;
+  padding-top: 50px;
 }
+
 .chamburger {
   display: none;
 }
 
 .npm {
-  width: 400px;
+  width: auto;
   display: inline-block;
   text-align: center;
-  margin: 5px;
+
   max-width: 100%;
 }
+
 .links i {
   margin: 10px;
   cursor: pointer;
 }
+
 .links a {
   color: rgba(255, 255, 255, 0.8);
 }
+
 .links a:hover {
   color: rgba(255, 255, 255, 1);
 }
+
 .hiddenbox {
   display: block;
 }
+
 .chamburger {
   text-align: right;
   padding: 5px;
+}
+.container-flex {
+  padding: 5vh 15vh 5vh 15vh;
+}
+.experience {
+  text-align: center;
+  padding: 0 35vh 5vh 35vh;
+  margin-top: 5vh;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: linear-gradient(to bottom right, #008300a6, #0091aaa8),
+    url(./../public/img/paper.jpg);
+  background-repeat: no-repeat;
 }
 @media only screen and (max-width: 1000px) {
   .myphoto {
@@ -360,8 +506,9 @@ h1 {
   }
   .about {
     width: 100%;
-    font-size: 1.4em;
+    font-size: 1.3rem;
     padding-top: 0px;
+    overflow: hidden;
   }
   h1 {
     padding-top: 100px;
@@ -370,17 +517,18 @@ h1 {
     background-size: 150%;
     font-size: 2em;
   }
-  .about {
-    font-size: 1.3rem;
-  }
-
   .menuspan {
     font-size: 1em;
   }
   .contact {
     font-size: 1.2em;
+    overflow: hidden;
+  }
+  body {
+    overflow: hidden;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .header {
     background-size: 250%;
@@ -395,8 +543,14 @@ h1 {
   .myname {
     font-size: 1.3rem;
   }
-    .contact {
+  .contact {
     font-size: 1em;
+  }
+  .experience h1 {
+    font-size: 1.5em;
+  }
+  .container h1 {
+    font-size: 1.5em;
   }
 }
 </style>
