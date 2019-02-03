@@ -3,7 +3,7 @@
     <img
       class="expPhoto"
       :src="src"
-      alt="CSS"
+      :alt="title"
     >
     <p class="expSpan">{{title}}</p>
   </div>

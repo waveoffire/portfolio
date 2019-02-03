@@ -3,6 +3,11 @@
     class="over"
     id="app"
   >
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
     <div class="row menu">
       <span class="col-4">
         <span
@@ -41,14 +46,19 @@
       class="header"
     >
       <div class="header-box">
-        <div data-aos="fade-left">Junior Front-end Developer</div>
+        <div
+          data-aos="fade-left"
+          data-aos-delay="1800"
+        >Junior Front-end Developer</div>
         <div
           data-aos="fade-right"
+          data-aos-delay="1800"
           class="headername"
         >Piotr Smilgin</div>
         <div
           class="links"
           data-aos="zoom-in"
+          data-aos-delay="1800"
         >
           <a
             href="https://github.com/waveoffire"
@@ -85,8 +95,9 @@
         <div
           data-aos="flip-right"
           class="col-12 col-md-8 "
+          style="padding-top:70px;"
         >Cześć, nazywam się Piotr Smilgin, a to moje portfolio. Mieszkam w Poznaniu. Pracuje jako serwisant komputerowy oraz dodatkowo, hobistycznie programuje.
-          <br>Uwielbiam programować, zwłaszcza front-end. Od dłuższego czasu programuje w Vue.js. Chciałbym w przyszłości zostać programistą Front-end.
+          <br>Uwielbiam programować, zwłaszcza front-end. Od dłuższego czasu moim ulubionym frameworkiem jest Vue.js. Chciałbym w przyszłości zostać programistą Front-end.
           <br>Zapraszam do obejrzenia moich projektów. Jeśli masz dla mnie propozycje współpracy - zapraszam do kontaktu.
         </div>
         <div class="myphoto col-12 col-md-3">
@@ -97,14 +108,18 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-3 myphoto laptop">
+        <div class="col-12 col-md-3 myphoto laptop">
           <img
             data-aos="zoom-in-left"
             src="./../public/img/laptop.jpg"
           >
         </div>
-        <div class="col-8">
-          XDD
+        <div
+          class="col-12 col-md-8"
+          style="padding-top:70px;"
+          data-aos="flip-left"
+        >
+          Mam 3 miesiące doświadczenia w małej firmie, umiem pracować w grupie i korzystać z git'a. Umiem pisac przejrzysty kod. Moje projekty dziele na komponenty aby były bardziej wydajne i czytelne.
         </div>
       </div>
     </div>
@@ -116,8 +131,8 @@
       <span class="line"></span>
       <experience-app
         data-aos="fade-left"
-        :data-aos-delay="object.id*100"
         v-for="object in experiences"
+        :data-aos-delay="(object.id*100)/2"
         :key="object.id"
         :src="object.src"
         :title="object.title"
@@ -213,6 +228,7 @@
 <script>
 import ExperienceApp from "./components/Experience";
 import ProjectApp from "./components/Project";
+import AOS from "aos";
 export default {
   components: {
     ExperienceApp,
@@ -321,11 +337,162 @@ export default {
         this.ham = "menuspan hiddenbox col-sm-2";
       }
     }
+  },
+  mounted() {
+    let element = document.getElementsByTagName("body");
+    setTimeout(function() {
+      element[0].classList.add("loaded");
+    }, 1500);
   }
 };
 </script>
 
 <style>
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  z-index: 1001;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db;
+  -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #5ee73c;
+  -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #fafafa;
+  -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg); /* IE 9 */
+    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg); /* IE 9 */
+    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg); /* IE 9 */
+    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg); /* IE 9 */
+    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+  }
+}
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 55.7%;
+  height: 100%;
+
+  z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(44, 44, 44, 0.651),
+      rgba(32, 32, 32, 0.425)
+    ),
+    url(./../public/img/dots.jpg);
+  -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+
+  background-size: 100%;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(44, 44, 44, 0.651),
+      rgba(32, 32, 32, 0.425)
+    ),
+    url(./../public/img/dots.jpg);
+  background-size: 100%;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+}
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%); /* IE 9 */
+  transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%); /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%); /* IE 9 */
+  transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
+}
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+  visibility: hidden;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.loaded #loader-wrapper {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+
+  -webkit-transition: all 0.3s 1s ease-out;
+  transition: all 0.3s 1s ease-out;
+}
+.no-js #loader-wrapper {
+  display: none;
+}
 .line {
   width: 100px;
   height: 1px;
@@ -491,15 +658,25 @@ h1 {
   text-align: center;
   padding: 0 35vh 5vh 35vh;
   margin-top: 5vh;
-  background-repeat: no-repeat;
+
   background-size: 100%;
   background-image: linear-gradient(to bottom right, #008300a6, #0091aaa8),
     url(./../public/img/paper.jpg);
-  background-repeat: no-repeat;
 }
 @media only screen and (max-width: 1000px) {
   .myphoto {
     width: 100%;
+  }
+  .container-flex {
+    padding: 5vh 5vh 5vh 5vh;
+  }
+  .laptop {
+    width: 100%;
+  }
+  .laptop img {
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
   }
   .myphoto img {
     transform: translateX(0%);
@@ -508,7 +685,6 @@ h1 {
     width: 100%;
     font-size: 1.3rem;
     padding-top: 0px;
-    overflow: hidden;
   }
   h1 {
     padding-top: 100px;
@@ -524,8 +700,9 @@ h1 {
     font-size: 1.2em;
     overflow: hidden;
   }
-  body {
-    overflow: hidden;
+
+  .experience {
+    padding: 0 5vh 5vh 5vh;
   }
 }
 

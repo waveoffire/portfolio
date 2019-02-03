@@ -14,6 +14,7 @@ new Vue({
       once: true,
     });
   },
+
   el: '#app',
   render: h => h(App)
 })
