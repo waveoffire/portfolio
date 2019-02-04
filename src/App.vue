@@ -94,10 +94,9 @@
       >
         <div
           data-aos="flip-right"
-          class="col-12 col-md-8 "
-          style="padding-top:70px;"
+          class="col-12 col-md-8 about-block"
         >Cześć, nazywam się Piotr Smilgin, a to moje portfolio. Mieszkam w Poznaniu. Pracuje jako serwisant komputerowy oraz dodatkowo, hobistycznie programuje.
-          <br>Uwielbiam programować, zwłaszcza front-end. Od dłuższego czasu moim ulubionym frameworkiem jest Vue.js. Chciałbym w przyszłości zostać programistą Front-end.
+          <br>Uwielbiam programować, zwłaszcza front-end. Od dłuższego czasu moim ulubionym framework'iem jest Vue.js. Chciałbym w przyszłości zostać programistą Front-end.
           <br>Zapraszam do obejrzenia moich projektów. Jeśli masz dla mnie propozycje współpracy - zapraszam do kontaktu.
         </div>
         <div class="myphoto col-12 col-md-3">
@@ -116,10 +115,11 @@
         </div>
         <div
           class="col-12 col-md-8"
-          style="padding-top:70px;"
+          style="padding-top:90px;"
           data-aos="flip-left"
         >
           Mam 3 miesiące doświadczenia w małej firmie, umiem pracować w grupie i korzystać z git'a. Umiem pisac przejrzysty kod. Moje projekty dziele na komponenty aby były bardziej wydajne i czytelne.
+          Szukam stałej pracy jako front-end developer.
         </div>
       </div>
     </div>
@@ -132,7 +132,7 @@
       <experience-app
         data-aos="fade-left"
         v-for="object in experiences"
-        :data-aos-delay="(object.id*100)/2"
+        :data-aos-delay="object.time"
         :key="object.id"
         :src="object.src"
         :title="object.title"
@@ -143,12 +143,9 @@
       id="projectsstart"
       class="container-flex"
     >
-      <h1 style="padding-top:200px">Moje projekty</h1>
+      <h1 class=project_h1>Moje projekty</h1>
       <span class="line"></span>
-      <div
-        style="padding-top:100px;"
-        class="row"
-      >
+      <div class="row project_row">
         <project-app
           data-aos="zoom-in"
           v-for="object in projects"
@@ -241,57 +238,68 @@ export default {
         {
           id: 0,
           title: "HTML to podstawa każdej mojej strony",
-          src: "./img/html.png"
+          src: "./img/html.png",
+          time: 0
         },
         {
           id: 1,
           title: "Animacje w CSS nie są mi obce",
-          src: "./img/css.png"
+          src: "./img/css.png",
+          time: 50
         },
         {
           id: 2,
           title: "API i Front pisze w JavaScript",
-          src: "./img/JavaScript.png"
+          src: "./img/JavaScript.png",
+          time: 100
         },
         {
           id: 3,
           title: "Vue.js to framework który skradł mi serce",
-          src: "./img/vue.png"
+          src: "./img/vue.png",
+          time: 150
         },
         {
           id: 4,
           title: "Bootstrap bez niego życie nie było by takie proste",
-          src: "./img/bootstrap.png"
+          src: "./img/bootstrap.png",
+          time: 200
         },
         {
           id: 5,
           title: "Dane pomiedzy api-front przesyłam jako JSON",
-          src: "./img/json.png"
+          src: "./img/json.png",
+          time: 0
         },
         {
           id: 6,
           title: "GIT to System kontroli wersji który ratuje życie",
-          src: "./img/Git.png"
+          src: "./img/Git.png",
+          time: 50
         },
         {
           id: 7,
           title: "Do swoich projektów używam również TypeScript",
-          src: "./img/typescript.png"
+          src: "./img/typescript.png",
+          time: 100
         },
         {
           id: 8,
           title: "API bez Node.js by nie istniało",
-          src: "./img/node.png"
+          src: "./img/node.png",
+          time: 150
         },
         {
           id: 9,
           title: "npm używam naprzemiennie z Yarn",
-          src: "./img/npm.svg"
+          src: "./img/npm.svg",
+          time: 200
         },
         {
           id: 10,
           title: "W tym projekcie uzywam Yarn",
-          src: "./img/yarn.png"
+          src: "./img/yarn.png",
+          time: 50
         }
       ],
       projects: [
@@ -531,7 +539,9 @@ body {
   padding-left: 10px;
   cursor: pointer;
 }
-
+.project_row {
+  padding-top: 100px;
+}
 .menuspan {
   text-align: center;
   padding-top: 5px;
@@ -564,7 +574,9 @@ body {
   position: relative;
   color: rgba(255, 255, 255, 0.8);
 }
-
+.about-block {
+  padding-top: 70px;
+}
 .headername {
   font-size: 2.2em;
   line-height: 0.7em;
@@ -663,6 +675,9 @@ h1 {
   background-image: linear-gradient(to bottom right, #008300a6, #0091aaa8),
     url(./../public/img/paper.jpg);
 }
+.project_h1 {
+  padding-top: 200px;
+}
 @media only screen and (max-width: 1000px) {
   .myphoto {
     width: 100%;
@@ -683,7 +698,7 @@ h1 {
   }
   .about {
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding-top: 0px;
   }
   h1 {
@@ -703,6 +718,12 @@ h1 {
 
   .experience {
     padding: 0 5vh 5vh 5vh;
+  }
+  .about-block {
+    padding-top: 0;
+  }
+  .project_row {
+    padding-top: 20px;
   }
 }
 
@@ -726,8 +747,9 @@ h1 {
   .experience h1 {
     font-size: 1.5em;
   }
-  .container h1 {
+  .container-flex h1 {
     font-size: 1.5em;
+    padding-top: 40px;
   }
 }
 </style>
