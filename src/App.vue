@@ -94,11 +94,12 @@
       >
         <div
           data-aos="flip-right"
-          class="col-12 col-md-8 about-block"
-        >Cześć, nazywam się Piotr Smilgin, a to moje portfolio. Mieszkam w Poznaniu. Pracuje jako serwisant komputerowy oraz dodatkowo, hobistycznie programuje.
-          <br>Uwielbiam programować, zwłaszcza front-end. Od dłuższego czasu moim ulubionym framework'iem jest Vue.js. Chciałbym w przyszłości zostać programistą Front-end.
-          <br>Zapraszam do obejrzenia moich projektów. Jeśli masz dla mnie propozycje współpracy - zapraszam do kontaktu.
+          class="col-12 col-md-7 about-block"
+        >Jestem Piotrek, mam 21 lat i mieszkam w Poznaniu. Szukam stałej pracy jako Front-end Developer. Najbardziej zależy mi na nauce nowych technologii i pracy z kreatywnymi i otwartymi ludźmi.
+          Komputery to moja pasja a programowanie to odnaeziona po latach miłość.
+          Z zawodu jestem technikiem informatykiem, a na życie zarabiam pracując w serwisie komputerowym.
         </div>
+        <div class="col-md-1 col-12"></div>
         <div class="myphoto col-12 col-md-3">
           <img
             data-aos="zoom-in-left"
@@ -106,6 +107,11 @@
           >
         </div>
       </div>
+      <!--       <div class="row more">
+
+        WIECEJ
+
+      </div> -->
       <div class="row">
         <div class="col-12 col-md-3 myphoto laptop">
           <img
@@ -113,13 +119,18 @@
             src="./../public/img/laptop.jpg"
           >
         </div>
+        <div class="col-md-1 col-12"></div>
         <div
-          class="col-12 col-md-8"
+          class="col-12 col-md-7"
           style="padding-top:90px;"
           data-aos="flip-left"
         >
-          Mam 3 miesiące doświadczenia w małej firmie, umiem pracować w grupie i korzystać z git'a. Umiem pisac przejrzysty kod. Moje projekty dziele na komponenty aby były bardziej wydajne i czytelne.
-          Szukam stałej pracy jako front-end developer.
+          Moim marzeniem jest podjać pracę jako Front-end Developer.
+          Nie sypiam po nocach przygotowyjąc kolejne projekty.
+          Dobrze czuję się w pracy w JavaScript'cie, a od jakiegoś czasu moim ulubionym frameworkiem jest Vue.js w którym pisze wiekszość swoich projektów. Wszystkie narzędzia, z których korzystam są TUTAJ.
+          Przez krótki okres pracowałem w małej firmie programistycznej, więc wiem co nieco jak wygląda praca w zespole.
+          Nauczyłem się tam korzystać z git'a, oraz podziału projektów na komponenty - strony są przez to bardziej wydajne i czytelne.
+          W wolnym czasie poza programowaniem - Lubie też grać w gry, oglądać filmy i seriale oraz chodzić na koncerty rockowych i punkowych zespołow.
         </div>
       </div>
     </div>
@@ -356,6 +367,18 @@ export default {
 </script>
 
 <style>
+.more {
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(44, 44, 44, 0.651),
+    rgba(32, 32, 32, 0.425)
+  );
+  -webkit-clip-path: polygon(0 10%, 100% 0, 80% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+
+  background-size: 100%;
+}
 #loader-wrapper {
   position: fixed;
   top: 0;
@@ -664,7 +687,7 @@ h1 {
   padding: 5px;
 }
 .container-flex {
-  padding: 5vh 15vh 5vh 15vh;
+  padding: 5vh 20vh 5vh 20vh;
 }
 .experience {
   text-align: center;
