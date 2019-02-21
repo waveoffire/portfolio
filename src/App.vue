@@ -96,7 +96,7 @@
           data-aos="flip-right"
           class="col-12 col-md-7 about-block"
         >Jestem Piotrek, mam 21 lat i mieszkam w Poznaniu. Szukam stałej pracy jako Front-end Developer. Najbardziej zależy mi na nauce nowych technologii i pracy z kreatywnymi i otwartymi ludźmi.
-          Komputery to moja pasja a programowanie to odnaeziona po latach miłość.
+          Komputery to moja pasja a programowanie to odnaleziona po latach miłość.
           Z zawodu jestem technikiem informatykiem, a na życie zarabiam pracując w serwisie komputerowym.
         </div>
         <div class="col-md-1 col-12"></div>
