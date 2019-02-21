@@ -327,7 +327,7 @@ export default {
           title:
             "Projekt w trakcie realizacji z użyciem Vue.js, pokazujący ciekawe oferty oraz zmiany w cenach samochodów",
           photo: "./img/zdzis.png",
-          live: "http://pb.zdzis.com/home"
+          live: "http://pb.zdzis.com/raporty/1"
         },
         {
           id: 2,
